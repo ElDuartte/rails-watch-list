@@ -10,4 +10,5 @@ require 'faker'
 10.times do
   movie = Movie.create(title: Faker::Movie.title, overview: Faker::Movie.quote)
   movie.save!
+  p movie
 end

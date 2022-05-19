@@ -1,0 +1,27 @@
+<div class="w-60 mx-auto mt-5">
+  <div class="banner banner-show" style="background-image: image_path('default.jpg', width: 400, height: 300, crop: :fill)">
+    <div class="container">
+      <h1><%= "#{@list.name}" %></h1>
+      <div class="mt-4"><%= link_to "Add a movie to this list", new_list_bookmark_path(@list), class: "btn btn-primary rounded" %></div>
+    </div>
+  </div>
+  <div class="bookmarks container mb-5 mt-5 d-flex flex-wrap justify-content-around">
+    <% @list.bookmarks.each do |bookmark| %>
+      <div class="bookmark-card shadow-sm m-2">
+
+        <div src="default.jpg" alt="cinema" class="image-show-lists"></div>
+
+        <div class="bookmark-body">
+          <h5 class="card-title font-weight-bold"><%= bookmark.movie.title %></h5>
+          <p class="card-text"><%= bookmark.movie.overview %></p>
+          <p><em><%= "'#{bookmark.comment}'" %></em></p>
+          <div class="bookmark-body-icon">
+            <%= link_to bookmark_path(bookmark), method: :delete, data: { confirm: 'Are you sure you want to remove this movie?' } do %>
+              <buttorounded-circlen type="button" class="btn btn-danger rounded-circle text-light ">X</buttorounded-circlen>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
