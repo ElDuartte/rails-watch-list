@@ -1,14 +1,13 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon ">
+<div class="navbar-container">
   <%= link_to lists_path, class: "nav-link" do %>
     <div class="nav-logo">
-      <i class="fas fa-film "></i>
+      <%# <div class="camera-logo"></div> %>
+      <%= image_tag "video-logo.png", class: "camera-logo" %>
     </div>
   <% end %>
-  <div class="navbar-right" id="navbarSupportedContent">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <%= link_to "About", about_path, class: "nav-link" %>
-      </li>
-    </ul>
-  </div>
+  <ul class="navbar-link-container">
+    <li class="nav-link">
+      <%= link_to "About", about_path, class: "link-text" %>
+    </li>
+  </ul>
 </div>

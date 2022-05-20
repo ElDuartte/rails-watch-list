@@ -1,15 +1,17 @@
-<div>
   <div class="banner-image"></div>
-  <div class="container mt-3">
-    <h1 class="">Add a movie to watch</h1>
-    <div class="mt-4 btn-div"><%= link_to "Add new movie", new_list_path, class: "btn btn-primary" %></div>
-  </div>
-  <div class="cards container my-5">
+
+  <div class="cards container">
     <% @lists.each do |list| %>
-      <div class="card-category" style="background-image: url('default.jpg')">
-        <%= link_to '', list_path(list), class: "card-category-link" %>
-        <h3><%= list.name %></h3>
+      <div class="list-category" >
+        <%= link_to list_path(list), class: "card-category-link" do %>
+        <div class="title-div">
+          <h3 class="title-list"><%= list.name%></h3>
+        </div>
+        <% end %>
       </div>
     <% end %>
+  <div class="add-container">
+    <h1 class="add-title">Add a movie to the list</h1>
+    <div class="add-button"><%= link_to "Add new movie", new_list_path, class: "" %></div>
   </div>
 </div>
